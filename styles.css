@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Open Sans', Arial, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
@@ -243,7 +243,7 @@ html {
     padding: 12px 24px;
     border: 2px solid;
     border-radius: 4px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
