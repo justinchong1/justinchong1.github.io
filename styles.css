@@ -1,0 +1,486 @@
+:root {
+    --background: #f7f7f4;
+    --text: #171717;
+    --muted: #6b6b66;
+    --line: #deded8;
+    --focus: #005fcc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.nav {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.nav a,
+.links a,
+#contact a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--muted);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.links a,
+#contact a {
+    border-bottom: 1px solid transparent;
+}
+
+.links a:hover,
+#contact a:hover {
+    border-bottom-color: currentColor;
+}
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    margin: 0 0 20px;
+    color: var(--muted);
+}
+
+h1 {
+    max-width: 780px;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(36px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    overflow-wrap: anywhere;
+}
+
+section:not(.hero) {
+    min-height: 300px;
+    padding: 72px 0;
+    border-top: 1px solid var(--line);
+}
+
+h2 {
+    margin: 0 0 24px;
+    font-size: 16px;
+}
+
+.placeholder {
+    max-width: 640px;
+    margin: 0;
+    color: var(--muted);
+    text-wrap: pretty;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 1000;
+    padding: 12px 16px;
+    background: var(--text);
+    color: var(--background);
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.skip-link:focus-visible {
+    outline-color: #fff;
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.resume-section,
+.resume-company,
+.resume-products details {
+    border-top: 1px solid var(--line);
+}
+
+.resume-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.resume-section > summary,
+.resume-company > summary,
+.resume-products summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.resume-section > summary::-webkit-details-marker,
+.resume-company > summary::-webkit-details-marker,
+.resume-products summary::-webkit-details-marker {
+    display: none;
+}
+
+.resume-section > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.resume-section > summary::after,
+.resume-company > summary::after,
+.resume-products summary::after {
+    content: "+";
+    font-weight: 400;
+}
+
+.resume-section[open] > summary::after,
+.resume-company[open] > summary::after,
+.resume-products details[open] > summary::after {
+    content: "-";
+}
+
+.resume-company {
+    margin: 0 0 16px 24px;
+}
+
+.resume-company > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 64px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.resume-company-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.company-date {
+    margin-left: auto;
+    margin-right: 16px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.resume-products {
+    margin-left: 24px;
+}
+
+.resume-products summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 56px;
+}
+
+.resume-item-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.resume-item-date {
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: 16px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.resume-product-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    border-top: 1px solid var(--line);
+}
+
+.resume-product-row > span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.resume-products p {
+    max-width: 620px;
+    margin: 0;
+    padding: 0 32px 20px 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.resume-detail-list {
+    margin: 0 0 20px;
+    padding-left: 40px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.resume-products p + .resume-detail-list {
+    margin-top: -16px;
+}
+
+.degree-list {
+    margin: -12px 0 20px;
+    padding-left: 24px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.resume-link {
+    display: inline-block;
+    margin-top: 32px;
+    color: inherit;
+}
+
+.case-study-intro a {
+    color: inherit;
+}
+
+.skills {
+    margin-bottom: 16px;
+}
+
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding-top: 20px;
+    padding-bottom: 24px;
+}
+
+.skill-category h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.skill-category ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.recognition {
+    margin-bottom: 16px;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 760px) 40px;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.recognition-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 24px 32px 24px 24px;
+    scroll-snap-align: start;
+}
+
+.recognition-card p {
+    max-width: 760px;
+    margin: 0 0 20px;
+    padding: 0;
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.recognition-card footer {
+    color: var(--muted);
+}
+
+.carousel-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--muted);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font: inherit;
+}
+
+.carousel-button:hover,
+.carousel-button:focus-visible {
+    border-color: var(--text);
+}
+
+.carousel-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.carousel-status {
+    margin: 8px 52px 0;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .carousel {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        gap: 6px;
+    }
+
+    .carousel-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .recognition-card {
+        padding: 16px 8px;
+    }
+
+    .recognition-card p {
+        font-size: 16px;
+    }
+
+    .skill-groups {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+    main {
+        width: min(100% - 32px, 1120px);
+    }
+
+    .nav {
+        width: min(1120px, calc(100% - 32px));
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .links {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .links.is-open {
+        display: flex;
+    }
+
+    .links a {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .resume-section > summary {
+        font-size: 22px;
+    }
+
+    .resume-company {
+        margin-left: 12px;
+    }
+
+    .resume-company > summary {
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px 0;
+    }
+
+    .resume-company > summary .company-date {
+        margin-right: 8px;
+        white-space: nowrap;
+    }
+
+    .resume-products {
+        margin-left: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
